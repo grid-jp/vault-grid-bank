@@ -1,0 +1,3 @@
+#!/bin/bash
+# vaultgen wrapper - convenience script
+exec "$(dirname "$0")/scripts/vaultgen.sh" "$@"

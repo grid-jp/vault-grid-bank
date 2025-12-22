@@ -1,0 +1,11 @@
+# CODEOWNERS - 3-Key Multisig Enforcement
+# All changes require approval from Founder + Auditor + Planetary Node
+
+# Global owners - all files require all three signatures
+* @vault-founder @vault-auditor @planetary-node-za
+
+# Critical vault metadata requires additional scrutiny
+VAULT_METADATA.json @vault-founder @vault-auditor @planetary-node-za
+.github/branch-protection.yml @vault-founder @vault-auditor @planetary-node-za
+.github/workflows/ @vault-founder @vault-auditor @planetary-node-za
+scripts/ @vault-founder @vault-auditor @planetary-node-za
