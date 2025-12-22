@@ -138,7 +138,7 @@ generate_key() {
   echo ""
   
   # Generate vault ID
-  VAULT_ID="${REGION}-${JURISDICTION}-${BIND^^}-001"
+  VAULT_ID="${REGION}-${JURISDICTION}-$(echo "${BIND}" | tr '[:lower:]' '[:upper:]')-001"
   echo -e "${BLUE}🆔 Vault ID: ${VAULT_ID}${NC}"
   
   # Generate quantum anchor hash (simulated)
