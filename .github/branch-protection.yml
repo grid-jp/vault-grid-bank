@@ -1,0 +1,55 @@
+# Branch Protection Configuration for Sovereign Verification
+# This file defines the 3-key multisig requirement for the main branch
+
+name: Branch Protection Policy
+
+# Protection rules for main branch
+main_branch:
+  protection:
+    enabled: true
+    
+    # Require pull request reviews before merging
+    required_pull_request_reviews:
+      required_approving_review_count: 3
+      dismiss_stale_reviews: true
+      require_code_owner_reviews: true
+      
+      # 3-key multisig: Founder + Auditor + Planetary Node
+      required_reviewers:
+        - role: Founder
+          minimum: 1
+        - role: Auditor
+          minimum: 1
+        - role: Planetary_Node
+          minimum: 1
+    
+    # Require status checks to pass before merging
+    required_status_checks:
+      strict: true
+      contexts:
+        - "dependency-check/western-cloud"
+        - "sovereign-verification/quantum-anchor"
+        - "deployment-validation/za-nodes"
+    
+    # Enforce restrictions
+    restrictions:
+      users: []
+      teams:
+        - "vault-founders"
+        - "vault-auditors"
+        - "planetary-nodes"
+    
+    # Additional protections
+    enforce_admins: true
+    require_linear_history: true
+    allow_force_pushes: false
+    allow_deletions: false
+    required_signatures: true
+
+# Code owners for multisig enforcement
+code_owners:
+  - pattern: "*"
+    owners:
+      - "@vault-founder"
+      - "@vault-auditor"
+      - "@planetary-node-za"

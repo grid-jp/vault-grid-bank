@@ -1,0 +1,34 @@
+{
+  "vault_id": "ZA-BRICS-VAULT-GRID-BANK-001",
+  "quantum_law_anchor": {
+    "jurisdiction": "BRICS",
+    "region": "ZA",
+    "deployment_type": "QuantumDeploy",
+    "binding": "vault-grid-bank",
+    "sovereign_nodes": [
+      "za-johannesburg-node-01",
+      "za-cape-town-node-02",
+      "za-durban-node-03"
+    ],
+    "verification_protocol": "SHA3-512-Quantum",
+    "multisig_requirement": {
+      "required_signatures": 3,
+      "signatories": [
+        "Founder",
+        "Auditor",
+        "Planetary_Node"
+      ]
+    }
+  },
+  "compliance": {
+    "data_sovereignty": "South_Africa",
+    "cloud_policy": "on-soil-only",
+    "prohibited_regions": [
+      "US",
+      "EU",
+      "Five_Eyes"
+    ]
+  },
+  "created": "2025-12-22T22:34:16Z",
+  "protocol_version": "1.0.0"
+}
